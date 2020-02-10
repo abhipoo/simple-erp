@@ -1,0 +1,38 @@
+a django application 
+
+inventory request app
+
+
+models -
+
+class inventory
+SKU
+quantity
+
+
+class pos
+type - Permitted values : immediate sales (white slip), dtp task (job card)
+operator -
+date -
+paper size -
+qty
+color_type - Permitted values : B/W, color
+price - (Perhaps this field needs to be calculated at real time depending on the type or job. or entered manually for custom job)
+
+
+
+Notes -
+
+Consider the manual time taken by inducing tech processes. Aim is to keep manual time required minimal. (It should certainly be lower than its now)
+
+At what point in the sales process are white slips created ?
+
+Can we directly connect printer data to app ? (Or even correlating / checking with application's data - this is a biz requirement)
+
+does the printer give pages used since startup, or for a given time-period.
+
+a story written on the backdrop of kara para themesong.
+
+user screens (views)-
+
+

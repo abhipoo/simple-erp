@@ -1,0 +1,20 @@
+{% load static %}
+
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="{% static 'inventory/bootstrap.min.css' %}">
+	</head>
+
+	<body>
+		This template displays page for creating a sales job.
+
+		<br>
+		<br>
+
+		<form action="{% url 'sales' %}" method="post">
+		{% csrf_token %}
+		{{ form.as_ul  }}
+    	<input type="submit" value="Submit">
+		</form>
+	</body>
+</html>

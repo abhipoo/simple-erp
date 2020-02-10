@@ -1,0 +1,31 @@
+{% load static %}
+
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'inventory/bootstrap.min.css' %}">
+</head>
+
+<body>
+	This template displays complete inventory of store.
+
+	<br>
+	<br>
+
+	{% if inventory_list %}
+	<table class="table table-striped">
+		<tr>
+			<th>SKU</th>
+			<th>Quantity</th>
+		</tr>
+		{% for item in inventory_list %}
+		<tr>
+			<td>{{ item.sku }}</td>
+			<td>{{ item.quantity }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+	{% else %}
+	<p>Time to stock up ! Your inventory is empty.</p>
+	{% endif %}
+</body>
+</html>
