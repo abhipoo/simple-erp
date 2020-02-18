@@ -6,26 +6,37 @@
 </head>
 
 <body>
-	This template displays complete inventory of store.
+	<div class='col-lg-12'>
+		<br>	
+		This template displays complete inventory of store.
 
-	<br>
-	<br>
+		<br>
+		<br>
 
-	{% if inventory_list %}
-	<table class="table table-striped">
-		<tr>
-			<th>SKU</th>
-			<th>Quantity</th>
-		</tr>
-		{% for item in inventory_list %}
-		<tr>
-			<td>{{ item.sku }}</td>
-			<td>{{ item.quantity }}</td>
-		</tr>
-		{% endfor %}
-	</table>
-	{% else %}
-	<p>Time to stock up ! Your inventory is empty.</p>
-	{% endif %}
+		{% if inventory_list %}
+		<table class="table table-striped">
+			<tr>
+				<th>SKU</th>
+				<th>Quantity</th>
+				<th>Actions</th>
+			</tr>
+			{% for item in inventory_list %}
+			<tr>
+				<td>{{ item.sku }}</td>
+				<td>{{ item.quantity }}</td>
+				<td>
+					<a class="btn btn-primary" href="{% url 'update_sku' item.sku %}">Update</a>
+
+					<a class="btn btn-warning" href="{% url 'inventory'%}">Delete</a>
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+		{% else %}
+		<p>Time to stock up ! Your inventory is empty.</p>
+		{% endif %}
+
+		<a class="btn btn-primary" href="{% url 'add_sku'%}">Add new SKU</a>
+	</div>
 </body>
 </html>

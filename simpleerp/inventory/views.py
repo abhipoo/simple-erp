@@ -2,7 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Inventory, Sales
 from .forms import JobForm
+from .forms import SkuForm
+from .forms import UpdateForm
 from datetime import datetime
+
 
 # Create your views here.
 
@@ -42,8 +45,40 @@ def sales(request):
 def dashboard(request):
     return HttpResponse("This is dashboard page.")
 
+def add_sku(request):
+    #return HttpResponse("Add new SKU") 
+    if request.method == 'POST':
+        form = SkuForm(request.POST)
+        if form.is_valid():
+            #print('form is valid')
+
+            #save to Inventory
+            post = form.save(commit=False)
+            post.save()
+        else:
+            print("Form invalid")
+            print(form.errors)
 
 
+    form = SkuForm()
+    context = {
+        'form' : form 
+    }
+    return render(request, 'inventory/add_new_sku.html', context)
+
+def update_sku(request, sku):
+    #return HttpResponse("Update x units for %s" % sku)
+    if request.method == 'POST':
+        return inventory(request)
+    else:
+        form = UpdateForm()
+        context = {
+            'sku' : sku,
+            'form' : form
+        }
+
+        return render(request, 'inventory/update_sku.html', context)
+       
 '''
 Helper functions
 '''

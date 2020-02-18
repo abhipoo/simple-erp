@@ -7,17 +7,19 @@
 
 <body>
 	<div class='col-lg-12'>
-		<br>	
-		This template displays page for creating a sales job.
+		<br>
+		This template displays page for adding new SKU to inventory.
 
 		<br>
 		<br>
 
-		<form action="{% url 'sales' %}" method="post">
+		<form action="{% url 'add_sku' %}" method="post">
 			{% csrf_token %}
 			{{ form.as_ul  }}
 			<input type="submit" value="Submit">
 		</form>
+
+		<a class="btn btn-primary" href="{% url 'inventory'%}">Inventory Main Page</a>
 	</div>
 </body>
 </html>

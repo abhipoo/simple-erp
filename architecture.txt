@@ -36,3 +36,32 @@ a story written on the backdrop of kara para themesong.
 user screens (views)-
 
 
+****************
+
+Feedback - 16 Feb 2020
+
+Create admin page - for adding new stock
+
+add fields : single page / back to back 
+
+dtp no. of pages / dtp price.
+
+*************** 
+
+Rent management software
+
+data maintain - all agreement data.
+
+Create dashboards -
+
+agreement renewal reminders. - to admin
+
+every month rental reminders with invoice copy.
+
+rental income month wise.
+
+cheque clearing date - manual entry.
+
+outstanding payment report.
+
+Edit / renew agreement.
