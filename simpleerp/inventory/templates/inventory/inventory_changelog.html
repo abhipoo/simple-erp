@@ -1,0 +1,44 @@
+{% load static %}
+
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'inventory/bootstrap.min.css' %}">
+</head>
+
+<body>
+	<div class='col-lg-12'>
+		<br>	
+		This template displays inventory changelog.
+
+		<br>
+		<br>
+
+		{% if inventory_changelog_list %}
+		<table class="table table-striped">
+			<tr>
+				<th>SKU</th>
+				<th>Quantity</th>
+				<th>Change type</th>
+				<th>Change by</th>
+				<th>Change date</th>
+				<th>Comments</th>
+			</tr>
+			{% for log in inventory_changelog_list %}
+			<tr>
+				<td>{{ log.sku }}</td>
+				<td>{{ log.quantity }}</td>
+				<td>{{ log.change_type }}</td>
+				<td>{{ log.change_by }}</td>
+				<td>{{ log.change_date }}</td>
+				<td>{{ log.comment }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+		{% else %}
+		<p>No entries in inventory changelog.</p>
+		{% endif %}
+
+		<a class="btn btn-primary" href="{% url 'inventory'%}">Inventory Main Page</a>
+	</div>
+</body>
+</html>

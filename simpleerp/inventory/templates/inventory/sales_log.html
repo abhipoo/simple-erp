@@ -1,0 +1,49 @@
+{% load static %}
+
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'inventory/bootstrap.min.css' %}">
+</head>
+
+<body>
+	<div class='col-lg-12'>
+		<br>	
+		This template displays sales log.
+
+		<br>
+		<br>
+
+		{% if sales_log %}
+		<table class="table table-striped">
+			<tr>
+				<th>Type</th>
+				<th>Sku</th>
+				<th>Quantity</th>
+				<th>Operator</th>
+				<th>Date</th>
+				<th>Sales_price</th>
+			</tr>
+			{% for log in sales_log %}
+			<tr>
+				<td>{{ log.sales_type }}</td>
+				<td>{{ log.sku }}</td>
+				<td>{{ log.qty }}</td>
+				<td>{{ log.operator }}</td>
+				<td>{{ log.job_date }}</td>
+				<td>{{ log.price }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+		{% else %}
+		<p>No sales transactions yet</p>
+		{% endif %}
+
+		<a class="btn btn-primary" href="{% url 'sales'%}">Create sales job</a>
+
+		<br>
+		<br>
+
+		<a class="btn btn-primary" href="{% url 'inventory'%}">Inventory Main Page</a>
+	</div>
+</body>
+</html>

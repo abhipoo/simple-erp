@@ -27,7 +27,7 @@
 				<td>
 					<a class="btn btn-primary" href="{% url 'update_sku' item.sku %}">Update</a>
 
-					<a class="btn btn-warning" href="{% url 'inventory'%}">Delete</a>
+					<a class="btn btn-warning" href="{% url 'delete_sku' item.sku %}">Delete</a>
 				</td>
 			</tr>
 			{% endfor %}
@@ -37,6 +37,14 @@
 		{% endif %}
 
 		<a class="btn btn-primary" href="{% url 'add_sku'%}">Add new SKU</a>
+
+		<a class="btn btn-primary" href="{% url 'inventory_changelog'%}">Inventory ChangeLog</a>
+
+		<br>
+		<br>
+
+		<a class="btn btn-success" href="{% url 'sales_log'%}">Sales Log</a>
+
 	</div>
 </body>
 </html>

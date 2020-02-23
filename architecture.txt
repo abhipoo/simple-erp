@@ -1,3 +1,13 @@
+db model commands :
+
+python manage.py makemigrations inventory
+
+python manage.py sqlmigrate inventory 0002 (to see sql code)
+
+python manage.py migrate
+
+**************
+
 a django application 
 
 inventory request app
@@ -65,3 +75,61 @@ cheque clearing date - manual entry.
 outstanding payment report.
 
 Edit / renew agreement.
+
+
+
+*************
+
+Changes to be done in model :
+
+class Sales:
+rename qty to quantity
+sku -> create foreign key reference to Inventory
+
+class InventoryChangeLog:
+sku -> create foreign key reference to Inventory
+
+create model : class User:
+
+
+************
+
+
+Changes related to user access :
+
+update_sku
+i.change_by = 'admin' #This should update automatically the username logged in.
+
+
+**************
+
+Changes related to inventory :
+
+Merge inventory, inventory_changelog, inventory_analytics (upcoming) into single view (check partial views in django) 
+
+
+**************
+
+Tech next steps :
+
+delete sku functionality. -done
+sales log page -done
+create sales job sku dropdown - pull SKUs from DB. - done
+user login
+pagination and table filtering
+master style page
+inventory addition deletion logs 
+confirmation popup on sales job creation
+
+
+Product next steps :
+
+Decide business owner landing page - Inventory / Sales
+Set inventory threshold - to warn when the inventory goes down.
+Calculate price from products
+
+
+Multi-channel next steps :
+
+Create marketplace apps to simulate multichannel behaviour.
+

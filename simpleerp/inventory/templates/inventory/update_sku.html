@@ -15,11 +15,25 @@
 
 		<p>Updating SKU : {{sku}}
 
-		<form action="{% url 'update_sku' 'placeholder' %}" method="post">
+		<form action="{% url 'update_sku' sku %}" method="post">
 			{% csrf_token %}
-			{{ form }}
+			
+			<label>Quantity</label>
+			{{ form.quantity }}
+
+			<label>Action</label>
+			{{ form.action }}
+
+			<br>
+
+			<label>Comment</label>
+			{{ form.comment }}
+
+			<br>
 			<input type="submit" value="Submit">
 		</form>
+
+		<a class="btn btn-warning" href="{% url 'delete_sku' sku %}">Delete</a>
 
 		<a class="btn btn-primary" href="{% url 'inventory'%}">Inventory Main Page</a>
 	</div>

@@ -15,9 +15,23 @@
 
 		<form action="{% url 'sales' %}" method="post">
 			{% csrf_token %}
-			{{ form.as_ul  }}
+				<li>
+					<label>Sku: </label>
+					<select name = "select_sku">
+						{% for element in inventory_list %}
+						<option value={{ element.sku }}>{{ element.sku }}</option>
+						{% endfor %}
+					</select>
+				</li>
+			
+			{{ form.as_ul }}
+			
 			<input type="submit" value="Submit">
 		</form>
+
+		<br>
+
+		<a class="btn btn-success" href="{% url 'sales_log'%}">Sales Log</a>
 	</div>
 </body>
 </html>
