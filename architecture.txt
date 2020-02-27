@@ -114,7 +114,7 @@ Tech next steps :
 
 delete sku functionality. -done
 sales log page -done
-create sales job sku dropdown - pull SKUs from DB. - done
+create sales job sku dropdown - pull SKUs from DB. -done
 user login
 pagination and table filtering
 master style page
@@ -132,4 +132,19 @@ Calculate price from products
 Multi-channel next steps :
 
 Create marketplace apps to simulate multichannel behaviour.
+
+
+**************
+
+ERP vs CRM
+
+website requirements..
+anna's coin website.
+devika's education website.
+
+**************
+
+
+
+
 
